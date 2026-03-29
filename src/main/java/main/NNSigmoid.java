@@ -17,6 +17,7 @@ public class NNSigmoid implements NeuralNet {
 		}
 	}
 
+	@Override
 	public Mat predict(Mat input) {
 		Mat a = input;
 		for (int i = 0; i < weights.length; i++) {
@@ -26,6 +27,7 @@ public class NNSigmoid implements NeuralNet {
 		return a;
 	}
 
+	@Override
 	public void train(Mat input, Mat target) {
 		Mat[] as = new Mat[weights.length + 1];
 		Mat[] zs = new Mat[weights.length];
